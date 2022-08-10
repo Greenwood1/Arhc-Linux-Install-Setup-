@@ -60,3 +60,9 @@ echo 'Installing core packages'
 
 pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd netctl
 
+
+echo 'System Setup'
+genfstab -pU /mnt >> /mnt/etc/fstab
+
+arch-chroot /mnt
+./arch-install_2.sh
